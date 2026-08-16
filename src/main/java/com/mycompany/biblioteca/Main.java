@@ -38,6 +38,21 @@ public class Main {
         }
     }
     
+    public static void searchClient() {
+        
+        System.out.println("--- Search Client ---");
+        System.out.print("Enter Client ID: ");
+        String id = sc.nextLine();
+
+        for (Client c : clients) {
+            if (c.getId().equals(id)) {
+                System.out.println("Client found: " + c);
+                return;
+            }
+        }
+        System.out.println("Client not found.");
+    }
+    
     
 
     public static void main(String[] args) {
