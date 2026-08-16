@@ -142,6 +142,34 @@ public class Main {
         System.out.println("Book not found.");
     }
     
+    public static void updateBook() {
+
+        System.out.println("Update Book");
+        System.out.print("Enter Book Code to update: ");
+        String code = sc.nextLine();
+
+        for (Book b : books) {
+            if (b.getCode().equals(code)) {
+                System.out.print("New Title: ");
+                String title = sc.nextLine();
+                System.out.print("New Publication Year: ");
+                int year = Integer.parseInt(sc.nextLine());
+                System.out.print("New Author: ");
+                String author = sc.nextLine();
+
+                b.setTitle(title);
+                b.setPublicationYear(year);
+                b.setAuthor(author);
+
+                System.out.println("Book updated successfully.");
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
+    
+    
+    
 
     public static void main(String[] args) {
         
