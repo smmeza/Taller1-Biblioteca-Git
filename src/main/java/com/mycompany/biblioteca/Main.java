@@ -53,7 +53,31 @@ public class Main {
         System.out.println("Client not found.");
     }
     
-    
+    public static void updateClient() {
+        
+        System.out.println("--- Update Client ---");
+        System.out.print("Enter Client ID to update: ");
+        String id = sc.nextLine();
+
+        for (Client c : clients) {
+            if (c.getId().equals(id)) {
+                System.out.print("New Name: ");
+                String name = sc.nextLine();
+                System.out.print("New Phone: ");
+                String phone = sc.nextLine();
+                System.out.print("New Email: ");
+                String email = sc.nextLine();
+
+                c.setName(name);
+                c.setPhone(phone);
+                c.setEmail(email);
+
+                System.out.println("Client updated successfully.");
+                return;
+            }
+        }
+        System.out.println("Client not found.");
+    }
 
     public static void main(String[] args) {
         
