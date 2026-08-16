@@ -7,8 +7,10 @@ import java.util.Scanner;
 public class Main {
     
     static ArrayList<Client> clients = new ArrayList<>();
+    static ArrayList<Book> books = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
     
+    //CLIENT
     public static void createClient() {
         
         System.out.println("Register Client");
@@ -28,7 +30,7 @@ public class Main {
     
     public static void listClients() {
         
-        System.out.println("--- Client List ---");
+        System.out.println("Client List");
         if (clients.isEmpty()) {
             System.out.println("No clients registered.");
             return;
@@ -40,7 +42,7 @@ public class Main {
     
     public static void searchClient() {
         
-        System.out.println("--- Search Client ---");
+        System.out.println("Search Client");
         System.out.print("Enter Client ID: ");
         String id = sc.nextLine();
 
@@ -55,7 +57,7 @@ public class Main {
     
     public static void updateClient() {
         
-        System.out.println("--- Update Client ---");
+        System.out.println("Update Client");
         System.out.print("Enter Client ID to update: ");
         String id = sc.nextLine();
 
@@ -79,10 +81,9 @@ public class Main {
         System.out.println("Client not found.");
     }
     
-    
     public static void deleteClient() {
         
-        System.out.println("--- Delete Client ---");
+        System.out.println("Delete Client");
         System.out.print("Enter Client ID to delete: ");
         String id = sc.nextLine();
 
@@ -95,6 +96,26 @@ public class Main {
         }
         System.out.println("Client not found.");
     }
+    
+    //BOOK
+    public static void createBook() {
+        
+        System.out.println("Register Book");
+        System.out.print("Code: ");
+        String code = sc.nextLine();
+        System.out.print("Title: ");
+        String title = sc.nextLine();
+        System.out.print("Publication Year: ");
+        int year = Integer.parseInt(sc.nextLine());
+        System.out.print("Author: ");
+        String author = sc.nextLine();
+
+        Book book = new Book(code, title, year, author);
+        books.add(book);
+        System.out.println("Book registered successfully.");
+    }
+    
+    
 
     public static void main(String[] args) {
         
