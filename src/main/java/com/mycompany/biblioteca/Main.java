@@ -115,6 +115,19 @@ public class Main {
         System.out.println("Book registered successfully.");
     }
     
+    public static void listBooks() {
+
+        System.out.println("Book List");
+        if (books.isEmpty()) {
+            System.out.println("No books registered.");
+            return;
+        }
+        for (Book b : books) {
+            System.out.println(b);
+        }
+    }
+    
+    
     
 
     public static void main(String[] args) {
