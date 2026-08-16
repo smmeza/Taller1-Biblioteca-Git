@@ -127,7 +127,20 @@ public class Main {
         }
     }
     
-    
+    public static void searchBook() {
+
+        System.out.println("Search Book");
+        System.out.print("Enter Book Code: ");
+        String code = sc.nextLine();
+
+        for (Book b : books) {
+            if (b.getCode().equals(code)) {
+                System.out.println("Book found: " + b);
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
     
 
     public static void main(String[] args) {
