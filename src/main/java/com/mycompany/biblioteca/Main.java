@@ -270,8 +270,81 @@ public class Main {
     }
     
     
-
     public static void main(String[] args) {
-        
+        int option;
+
+        do {
+            System.out.println("");
+            System.out.println("===== LIBRARY MANAGEMENT SYSTEM =====");
+            System.out.println("1. Register Client");
+            System.out.println("2. List Clients");
+            System.out.println("3. Search Client");
+            System.out.println("4. Update Client");
+            System.out.println("5. Delete Client");
+            System.out.println("6. Register Book");
+            System.out.println("7. List Books");
+            System.out.println("8. Search Book");
+            System.out.println("9. Update Book");
+            System.out.println("10. Delete Book");
+            System.out.println("11. Register Loan");
+            System.out.println("12. Return Loan");
+            System.out.println("13. List Active Loans");
+            System.out.println("0. Exit");
+            System.out.print("Choose an option: ");
+
+            option = Integer.parseInt(sc.nextLine());
+
+            switch (option) {
+                
+                case 1:
+                    createClient();
+                    break;
+                case 2:
+                    listClients();
+                    break;
+                case 3:
+                    searchClient();
+                    break;
+                case 4:
+                    updateClient();
+                    break;
+                case 5:
+                    deleteClient();
+                    break;
+                case 6:
+                    createBook();
+                    break;
+                case 7:
+                    listBooks();
+                    break;
+                case 8:
+                    searchBook();
+                    break;
+                case 9:
+                    updateBook();
+                    break;
+                case 10:
+                    deleteBook();
+                    break;
+                case 11:
+                    createLoan();
+                    break;
+                case 12:
+                    returnLoan();
+                    break;
+                case 13:
+                    listActiveLoans();
+                    break;
+                case 0:
+                    System.out.println("Goodbye!");
+                    break;
+                default:
+                    System.out.println("Invalid option.");
+                    break;
+            }
+
+        } while (option != 0);
     }
+    
+    
 }
